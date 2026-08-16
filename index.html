@@ -3,6 +3,28 @@
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#10214b"><title>Ryan's Birthday Quest V2</title><link rel="stylesheet" href="styles.css"></head>
 <body><main class="shell">
 <section class="screen intro-screen" id="introScreen"><div class="pixel-stars" aria-hidden="true"></div><p class="eyebrow">★ NEW QUEST AVAILABLE ★</p><div class="hero-world" aria-hidden="true"><div class="cloud c1"></div><div class="cloud c2"></div><div class="mountain m1"></div><div class="mountain m2"></div><div class="tree t1"></div><div class="tree t2"></div><div class="buddy"><div class="goggles">◉ ◉</div><div class="smile">⌣</div><div class="overalls"></div></div></div><h1>RYAN ZENG’S<br><span>BIRTHDAY QUEST</span></h1><p class="intro-copy">Mine the mystery blocks, dodge TNT and recover the legendary birthday cake!</p><button class="primary-btn" id="startButton">START QUEST <span>▶</span></button><p class="hint">🔊 Sound begins after you tap Start Quest.</p></section>
-<section class="screen game-screen hidden" id="gameScreen" aria-label="Birthday Quest game"><div class="game-header"><div><small>LEVEL 8 QUEST</small><strong>MINE THE PARTY TREASURE</strong></div><button class="sound-btn" id="soundButton" aria-label="Toggle sound">🔊</button></div><div class="stat-row"><div class="stat">🍌 <span id="bananaCount">0</span>/3</div><div class="stat">💎 <span id="diamondCount">0</span>/2</div><div class="stat">🎂 <span id="cakeCount">❌</span></div><div class="timer" id="timer">00:45</div></div><div class="xp"><div id="xpFill"></div></div><canvas id="gameCanvas" width="720" height="920" aria-label="Move to blocks and mine for hidden birthday treasure."></canvas><p class="game-message" id="gameMessage">Find a glowing mystery block and hit it 3 times!</p><button class="mine-btn" id="mineButton">⛏ MINE BLOCK</button><div class="controls"><button data-direction="up">▲</button><div><button data-direction="left">◀</button><button data-direction="down">▼</button><button data-direction="right">▶</button></div></div><button class="skip-btn" id="skipButton">Skip to invitation</button></section>
+<section class="screen game-screen hidden" id="gameScreen" aria-label="Birthday Quest game">
+  <div class="game-header">
+    <div><small id="levelLabel">LEVEL 1</small><strong id="questTitle">MINE THE PARTY TREASURE</strong></div>
+    <button class="sound-btn" id="soundButton" aria-label="Toggle sound">🔊</button>
+  </div>
+  <div class="stat-row" id="treasureStats">
+    <div class="stat">🍌 <span id="bananaCount">0</span>/3</div>
+    <div class="stat">💎 <span id="diamondCount">0</span>/2</div>
+    <div class="stat">🎂 <span id="cakeCount">❌</span></div>
+    <div class="timer" id="timer">00:45</div>
+  </div>
+  <div class="escape-stats hidden" id="escapeStats">👾 ESCAPE TIME: <span id="escapeTimer">00:45</span></div>
+  <div class="escape-stats hidden" id="fightStats">
+    <div>👾 MONSTERS DEFEATED: <span id="monsterDefeated">0</span>/3</div>
+    <div id="playerLives" aria-label="10 banana lives">🍌🍌🍌🍌🍌🍌🍌🍌🍌🍌</div>
+  </div>
+  <div class="xp" id="xpBar"><div id="xpFill"></div></div>
+  <canvas id="gameCanvas" width="720" height="920" aria-label="Move to blocks and mine for hidden birthday treasure."></canvas>
+  <p class="game-message" id="gameMessage">Find a glowing mystery block and hit it 3 times!</p>
+  <button class="mine-btn" id="mineButton">⛏ MINE BLOCK</button>
+  <div class="controls"><button data-direction="up">▲</button><div><button data-direction="left">◀</button><button data-direction="down">▼</button><button data-direction="right">▶</button></div></div>
+  <button class="skip-btn" id="skipButton">Skip to invitation</button>
+</section>
 <section class="screen reveal-screen hidden" id="revealScreen"><div class="victory-burst" aria-hidden="true">🍌 ✦ 💎 🎈 💎 ✦ 🍌</div><p class="eyebrow">🏆 QUEST COMPLETE! 🏆</p><h2>LEVEL <span>8</span><br>UNLOCKED!</h2><p class="reveal-copy">Legendary treasure recovered. You’re invited to Ryan’s birthday celebration!</p><div class="invite-card"><p class="card-label">DATE</p><p class="card-value">SATURDAY, 5 SEPTEMBER</p><hr><p class="card-label">TIME</p><p class="card-value big">3:00 PM</p><hr><p class="card-label">LOCATION</p><p class="card-value">ZONE BOWLING &amp;<br>TIMEZONE, WAIRAU</p><hr><p class="card-label">ACTIVITIES</p><p class="activities">🎳 Bowling &nbsp; 🕹️ Arcade &nbsp; 🔫 Laser Tag</p></div><div class="rsvp"><strong>RSVP TO GRACIE</strong><br>WeChat</div><button class="primary-btn replay-btn" id="replayButton">PLAY AGAIN</button></section>
 </main><script src="app.js"></script></body></html>
