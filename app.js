@@ -18,11 +18,11 @@
   const maze = [
     {x:0,y:0,w:720,h:30},{x:0,y:890,w:720,h:30},{x:0,y:0,w:30,h:920},{x:690,y:0,w:30,h:920},
     // Every barrier has at least two openings, creating alternate escape routes.
-    {x:30,y:755,w:150,h:34},{x:330,y:755,w:150,h:34},{x:630,y:755,w:60,h:34},
-    {x:150,y:605,w:170,h:34},{x:500,y:605,w:190,h:34},
-    {x:30,y:455,w:120,h:34},{x:320,y:455,w:150,h:34},{x:630,y:455,w:60,h:34},
-    {x:150,y:305,w:170,h:34},{x:500,y:305,w:190,h:34},
-    {x:30,y:155,w:150,h:34},{x:330,y:155,w:150,h:34}
+    {x:30,y:755,w:130,h:34},{x:350,y:755,w:110,h:34},{x:650,y:755,w:40,h:34},
+    {x:170,y:605,w:140,h:34},{x:530,y:605,w:160,h:34},
+    {x:30,y:455,w:100,h:34},{x:330,y:455,w:130,h:34},{x:650,y:455,w:40,h:34},
+    {x:170,y:305,w:140,h:34},{x:530,y:305,w:160,h:34},
+    {x:30,y:155,w:130,h:34},{x:350,y:155,w:110,h:34}
   ];
 
   function show(name) { Object.entries(screens).forEach(([key, node]) => node.classList.toggle("hidden", key !== name)); }
@@ -57,7 +57,7 @@
     if(game.bananas>=3&&game.diamonds>=2&&game.cake) startEscape();
   }
   function startEscape() {
-    game.mode="escape"; game.blocks=[]; game.player={x:75,y:835,dx:0,dy:0}; game.monster={x:360,y:75,speed:3.15}; game.exit={x:635,y:75,w:74,h:74}; game.escapeSeconds=45; game.escapeStartedAt=0; game.last=0; game.particles=[];
+    game.mode="escape"; game.blocks=[]; game.player={x:75,y:835,dx:0,dy:0}; game.monster={x:360,y:75,speed:2.55}; game.exit={x:635,y:75,w:74,h:74}; game.escapeSeconds=45; game.escapeStartedAt=0; game.last=0; game.particles=[];
     setHud("LEVEL 2","ESCAPE THE LITTLE MONSTER"); hideAllStats();
     $("escapeStats").classList.remove("hidden"); $("xpBar").classList.add("hidden"); $("mineButton").classList.add("hidden"); $("escapeTimer").textContent="00:45";
     $("gameMessage").textContent="👾 RUN! Choose your route, dodge the chasing monster and reach the top-right EXIT!";
